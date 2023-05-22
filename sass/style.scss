@@ -80,6 +80,12 @@ body {
 	}
 }
 
+.dark-bars,
+.dark-bars::after,
+.dark-bars::before {
+	background-color: $dark;
+}
+
 .nav {
 	position: fixed;
 	top: 0;
@@ -89,7 +95,7 @@ body {
 	justify-content: center;
 	width: 100%;
 	height: 100vh;
-	z-index: 1;
+	z-index: 10;
 	background-image: $color-gradient-solid;
 	transition: 0.5s cubic-bezier(0.74, 0.14, 0.35, 0.83);
 
@@ -172,7 +178,7 @@ body {
 		text-transform: uppercase;
 		cursor: pointer;
 		&::before {
-			background-color: $light-white;
+			background-color: $dark-white;
 		}
 	}
 }
@@ -185,7 +191,7 @@ body {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		margin: 5rem 0;
+		margin: 3rem 0;
 		background-color: $light-white;
 	}
 	&__img {
@@ -217,7 +223,9 @@ body {
 		font-weight: 300;
 	}
 	&_p {
-		margin: 2rem;
+		border-top: 1px solid $white;
+		border-bottom: 1px solid $white;
+		padding: 2rem;
 	}
 }
 
@@ -277,28 +285,34 @@ body {
 			left: 0;
 			height: 100%;
 			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 			padding: 2rem;
-			background-color: $text-bgc;
+			background-color: $blue;
 			border-radius: 20px;
 			opacity: 0;
 			transform: rotateY(-180deg);
 			transition: transform 0.8s, opacity 0.8s;
 			&-btn {
-				margin-top: 1rem;
-				padding: 1.5rem 3rem;
+				padding: 1rem 2rem;
 				background-color: $white;
 				border-radius: 20px;
-				border: none;
+				border: 1px solid $dark-white;
 				transition: background-color 0.3s;
 				cursor: pointer;
 				&::before {
-					background-color: $light-white;
+					background-color: $dark-white;
+				}
+				a {
+					text-transform: uppercase;
+					color: $dark;
+					text-decoration: none;
 				}
 			}
 		}
 
 		&-h3 {
-			margin-bottom: 2rem;
 			font-family: var(--font-decoration);
 			font-weight: 300;
 			font-size: 3rem;
@@ -313,6 +327,180 @@ body {
 		&-list-item:last-child {
 			border-bottom: none;
 		}
+	}
+}
+
+// offer
+
+.offer {
+	position: relative;
+	background-image: $title-color-gradient;
+	.section-h2 {
+		-webkit-text-fill-color: $white;
+	}
+	&__option {
+		margin: 2.5rem 0;
+		overflow: hidden;
+		background-color: $light-white;
+		&-h3 {
+			margin-top: 1rem;
+			font-size: 2rem;
+		}
+		&-img {
+			width: 100%;
+			transition: transform 0.3s;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+		&-info {
+			padding: 2rem;
+			background-color: $light-white;
+			z-index: 1;
+		}
+		&-text {
+			margin: 2rem 0;
+		}
+		&-btn {
+			width: 100%;
+			padding: 0.7rem 1.4rem;
+			border: none;
+			border-radius: 2rem;
+			text-transform: uppercase;
+			color: $white;
+			background-color: $blue;
+			cursor: pointer;
+			&::before {
+				background-color: $dark-blue;
+			}
+		}
+	}
+}
+
+// reviews
+.reviews {
+	&__box {
+		position: relative;
+		margin-top: 3rem;
+		padding: 7.3rem 2rem 2rem;
+		background-color: $light-white;
+		&-person {
+			padding-top: 2rem;
+			font-weight: bold;
+		}
+		&-img {
+			position: absolute;
+			top: -20px;
+			right: 20px;
+			height: 80px;
+			img {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+			}
+		}
+		&-quote {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			font-size: 3rem;
+			color: $blue;
+		}
+	}
+}
+
+// contact
+.contact {
+	position: relative;
+	background-color: $dark-white;
+	.decoration__left-bottom {
+		background-color: $dark;
+	}
+	&__form {
+		&-lebel {
+			display: block;
+			margin: 2rem 0 0.5rem;
+			text-transform: uppercase;
+		}
+		&-input {
+			@include contact;
+		}
+		&-textarea {
+			@include contact;
+			min-height: 15rem;
+			resize: vertical;
+		}
+		&-btn {
+			position: relative;
+			left: 100%;
+			transform: translateX(-100%);
+			margin-top: 1rem;
+			padding: 1rem 4rem;
+			border: none;
+			border-radius: 2rem;
+			color: $white;
+			background-color: $blue;
+			cursor: pointer;
+			&::before {
+				background-color: $dark-blue;
+			}
+		}
+	}
+}
+
+.footer {
+	color: $white;
+	background-color: $dark;
+	padding: 6.5rem 1.5rem 2rem;
+	p {
+		line-height: 2rem;
+	}
+	&__box {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 2rem;
+		.fa-brands {
+			margin: 1.5rem 1rem 0 0;
+			color: $white;
+			font-size: 4rem;
+			transition: color 0.4s;
+			cursor: pointer;
+		}
+		.fa-brands:hover {
+			color: $dark-blue;
+		}
+		&-list-items {
+			margin: 2rem 0;
+			list-style: none;
+			a {
+				color: $white;
+				text-decoration: none;
+			}
+			:hover {
+				color: $blue;
+			}
+		}
+
+		&-offer,
+		&-about-us {
+			width: 50%;
+			margin: 3rem 0;
+		}
+		&-h3 {
+			margin-bottom: 2rem;
+			font-family: var(--font-bold);
+			font-size: 2.5rem;
+			text-transform: uppercase;
+			&--logo {
+				font-size: 3.5rem;
+				font-family: var(--font-decoration);
+				text-transform: none;
+			}
+		}
+	}
+	&__bottom-text {
+		margin-top: 2rem;
+		text-align: center;
 	}
 }
 
@@ -350,6 +538,35 @@ body {
 		padding: 16rem 8rem;
 		&__h2 {
 			font-size: 4.5rem;
+		}
+	}
+	.reviews {
+		&__box {
+			margin: 3rem 1rem;
+		}
+	}
+	.contact {
+		&__form {
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 80%;
+		}
+	}
+	.footer {
+		&__box {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			&-offer,
+			&-about-us {
+				margin: 0 2rem;
+				width: 25%;
+			}
+			&-company {
+				margin: 0 2rem;
+				width: 50%;
+			}
 		}
 	}
 }
@@ -404,11 +621,58 @@ body {
 			margin: 1rem;
 		}
 	}
+	.offer {
+		&__option {
+			display: flex;
+			&-img {
+				object-fit: cover;
+				width: 50%;
+				&--right {
+					order: 1;
+				}
+			}
+			&-h3 {
+				margin-top: 0;
+			}
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding: 4rem 3rem;
+				&--right {
+					text-align: right;
+				}
+				&-btn {
+					padding: 0.9rem 1.8rem;
+				}
+			}
+		}
+	}
+	.contact {
+		&__form {
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 80%;
+		}
+	}
+	.footer {
+		&__box {
+			&-offer,
+			&-about-us {
+				width: 20%;
+			}
+			&-company {
+				margin: 0 2rem;
+				width: 60%;
+			}
+		}
+	}
 }
 
 @media (min-width: 922px) {
 	body {
-		font-size: 1.8rem;
+		font-size: 1.7rem;
 	}
 	.nav-btn {
 		top: 30px;
@@ -435,4 +699,42 @@ body {
 			width: 30%;
 		}
 	}
+	.offer {
+		&__option {
+			&-h3 {
+				font-size: 3.2rem;
+			}
+			&-img {
+				height: 320px;
+				width: 100%;
+			}
+		}
+	}
+	.contact {
+		&__form {
+			width: 70%;
+		}
+	}
+	.footer {
+		&__box {
+			&-offer,
+			&-about-us {
+				width: 15%;
+			}
+			&-company {
+				margin: 0 2rem;
+				width: 70%;
+			}
+		}
+	}
 }
+
+// &__box {
+// 	display: flex;
+// 	&-company {
+// 	}
+// 	&-offer {
+// 	}
+// 	&-about-us {
+// 	}
+// }

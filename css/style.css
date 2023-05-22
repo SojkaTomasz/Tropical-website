@@ -33,7 +33,6 @@
 
 .btn-animation {
   position: relative;
-  transition: background-color 3s;
   overflow: hidden;
   z-index: 0;
 }
@@ -45,12 +44,12 @@
   left: 0;
   height: 100%;
   width: 100%;
-  transform: scaleX(0);
-  transition: transform 0.3s;
+  transform: translate(110%);
+  transition: transform 0.5s;
   z-index: -1;
 }
 .btn-animation:hover::before {
-  transform: scaleX(1);
+  transform: translate(0);
 }
 
 .decoration {
@@ -60,24 +59,21 @@
   background-color: #fff;
 }
 .decoration__left-bottom {
-  bottom: 0;
+  bottom: -1px;
   left: -30px;
   transform: skewX(45deg);
 }
 .decoration__right-top {
-  top: 0;
+  top: -1px;
   right: -30px;
   transform: skewX(45deg);
 }
 
 .section-h2 {
-  margin-bottom: 3.5rem;
+  margin: 1.5rem 0 3.5rem;
   text-align: center;
   text-transform: uppercase;
-  background: linear-gradient(to top left, #ff721b 0%, #7873f5 100%);
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #7873f5;
   font-size: 3rem;
 }
 
@@ -119,7 +115,7 @@ html {
 
 body {
   font-family: var(--font-light);
-  color: #555555;
+  color: #3c3c3c;
   font-size: 1.4rem;
 }
 
@@ -169,6 +165,12 @@ body {
   transition-delay: 0.1s;
 }
 
+.dark-bars,
+.dark-bars::after,
+.dark-bars::before {
+  background-color: #3c3c3c;
+}
+
 .nav {
   position: fixed;
   top: 0;
@@ -178,7 +180,7 @@ body {
   justify-content: center;
   width: 100%;
   height: 100vh;
-  z-index: 1;
+  z-index: 10;
   background-image: radial-gradient(circle at top right, #ff721b 0%, #7873f5 100%);
   transition: 0.5s cubic-bezier(0.74, 0.14, 0.35, 0.83);
 }
@@ -251,21 +253,21 @@ body {
   margin-top: 30px;
   padding: 0.8rem 1.6rem;
   background-color: #fff;
-  color: #555555;
+  color: #3c3c3c;
   border-radius: 20px;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
 }
 .header__btn::before {
-  background-color: #f7f7f7;
+  background-color: #e8e8e8;
 }
 
 .countries__box {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 5rem 0;
+  margin: 3rem 0;
   background-color: #f7f7f7;
 }
 .countries__img {
@@ -298,7 +300,9 @@ body {
   font-weight: 300;
 }
 .img_p {
-  margin: 2rem;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 2rem;
 }
 
 .countries__card {
@@ -347,27 +351,33 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 2rem;
-  background-color: #59afff;
+  background-color: #7873f5;
   border-radius: 20px;
   opacity: 0;
   transform: rotateY(-180deg);
   transition: transform 0.8s, opacity 0.8s;
 }
 .countries__card-info-btn {
-  margin-top: 1rem;
-  padding: 1.5rem 3rem;
+  padding: 1rem 2rem;
   background-color: #fff;
   border-radius: 20px;
-  border: none;
+  border: 1px solid #e8e8e8;
   transition: background-color 0.3s;
   cursor: pointer;
 }
 .countries__card-info-btn::before {
-  background-color: #f7f7f7;
+  background-color: #e8e8e8;
+}
+.countries__card-info-btn a {
+  text-transform: uppercase;
+  color: #3c3c3c;
+  text-decoration: none;
 }
 .countries__card-h3 {
-  margin-bottom: 2rem;
   font-family: var(--font-decoration);
   font-weight: 300;
   font-size: 3rem;
@@ -381,6 +391,176 @@ body {
 }
 .countries__card-list-item:last-child {
   border-bottom: none;
+}
+
+.offer {
+  position: relative;
+  background-image: linear-gradient(to top left, #ff721b 0%, #7873f5 100%);
+}
+.offer .section-h2 {
+  -webkit-text-fill-color: #fff;
+}
+.offer__option {
+  margin: 2.5rem 0;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+.offer__option-h3 {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+.offer__option-img {
+  width: 100%;
+  transition: transform 0.3s;
+}
+.offer__option-img:hover {
+  transform: scale(1.1);
+}
+.offer__option-info {
+  padding: 2rem;
+  background-color: #f7f7f7;
+  z-index: 1;
+}
+.offer__option-text {
+  margin: 2rem 0;
+}
+.offer__option-btn {
+  width: 100%;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #7873f5;
+  cursor: pointer;
+}
+.offer__option-btn::before {
+  background-color: #4742df;
+}
+
+.reviews__box {
+  position: relative;
+  margin-top: 3rem;
+  padding: 7.3rem 2rem 2rem;
+  background-color: #f7f7f7;
+}
+.reviews__box-person {
+  padding-top: 2rem;
+  font-weight: bold;
+}
+.reviews__box-img {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  height: 80px;
+}
+.reviews__box-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.reviews__box-quote {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 3rem;
+  color: #7873f5;
+}
+
+.contact {
+  position: relative;
+  background-color: #e8e8e8;
+}
+.contact .decoration__left-bottom {
+  background-color: #3c3c3c;
+}
+.contact__form-lebel {
+  display: block;
+  margin: 2rem 0 0.5rem;
+  text-transform: uppercase;
+}
+.contact__form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.contact__form-textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  min-height: 15rem;
+  resize: vertical;
+}
+.contact__form-btn {
+  position: relative;
+  left: 100%;
+  transform: translateX(-100%);
+  margin-top: 1rem;
+  padding: 1rem 4rem;
+  border: none;
+  border-radius: 2rem;
+  color: #fff;
+  background-color: #7873f5;
+  cursor: pointer;
+}
+.contact__form-btn::before {
+  background-color: #4742df;
+}
+
+.footer {
+  color: #fff;
+  background-color: #3c3c3c;
+  padding: 6.5rem 1.5rem 2rem;
+}
+.footer p {
+  line-height: 2rem;
+}
+.footer__box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.footer__box .fa-brands {
+  margin: 1.5rem 1rem 0 0;
+  color: #fff;
+  font-size: 4rem;
+  transition: color 0.4s;
+  cursor: pointer;
+}
+.footer__box .fa-brands:hover {
+  color: #4742df;
+}
+.footer__box-list-items {
+  margin: 2rem 0;
+  list-style: none;
+}
+.footer__box-list-items a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer__box-list-items :hover {
+  color: #7873f5;
+}
+.footer__box-offer, .footer__box-about-us {
+  width: 50%;
+  margin: 3rem 0;
+}
+.footer__box-h3 {
+  margin-bottom: 2rem;
+  font-family: var(--font-bold);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.footer__box-h3--logo {
+  font-size: 3.5rem;
+  font-family: var(--font-decoration);
+  text-transform: none;
+}
+.footer__bottom-text {
+  margin-top: 2rem;
+  text-align: center;
 }
 
 @media (min-width: 576px) {
@@ -411,6 +591,28 @@ body {
   }
   .img__h2 {
     font-size: 4.5rem;
+  }
+  .reviews__box {
+    margin: 3rem 1rem;
+  }
+  .contact__form {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+  .footer__box {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .footer__box-offer, .footer__box-about-us {
+    margin: 0 2rem;
+    width: 25%;
+  }
+  .footer__box-company {
+    margin: 0 2rem;
+    width: 50%;
   }
 }
 @media (min-width: 768px) {
@@ -456,10 +658,49 @@ body {
     width: 45%;
     margin: 1rem;
   }
+  .offer__option {
+    display: flex;
+  }
+  .offer__option-img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 50%;
+  }
+  .offer__option-img--right {
+    order: 1;
+  }
+  .offer__option-h3 {
+    margin-top: 0;
+  }
+  .offer__option-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem 3rem;
+  }
+  .offer__option-info--right {
+    text-align: right;
+  }
+  .offer__option-info-btn {
+    padding: 0.9rem 1.8rem;
+  }
+  .contact__form {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+  .footer__box-offer, .footer__box-about-us {
+    width: 20%;
+  }
+  .footer__box-company {
+    margin: 0 2rem;
+    width: 60%;
+  }
 }
 @media (min-width: 922px) {
   body {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   .nav-btn {
     top: 30px;
@@ -486,5 +727,22 @@ body {
   }
   .countries__card {
     width: 30%;
+  }
+  .offer__option-h3 {
+    font-size: 3.2rem;
+  }
+  .offer__option-img {
+    height: 320px;
+    width: 100%;
+  }
+  .contact__form {
+    width: 70%;
+  }
+  .footer__box-offer, .footer__box-about-us {
+    width: 15%;
+  }
+  .footer__box-company {
+    margin: 0 2rem;
+    width: 70%;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -7,3 +7,10 @@
 	background-size: cover;
 	background-attachment: fixed;
 }
+
+@mixin contact{
+	width: 100%;
+	padding: 0.5rem;
+	border: none;
+	border-radius: 0.5rem;
+}
