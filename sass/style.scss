@@ -1,0 +1,438 @@
+@use './colors' as *;
+@use './components' as *;
+@use './mixins' as *;
+@use './font';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: var(--font-light);
+	color: $dark;
+	font-size: 1.4rem;
+}
+
+// NAV
+
+.nav-btn {
+	position: fixed;
+	top: 22px;
+	right: 22px;
+	padding: 1rem;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 100;
+
+	&:focus {
+		outline: none;
+		border: 1px solid rgb(224, 224, 224);
+		border-radius: 8px;
+	}
+
+	&:hover &__bars::after,
+	&:hover &__bars::before {
+		width: 100%;
+	}
+
+	&__box {
+		position: relative;
+		width: 48px;
+		height: 36px;
+	}
+
+	&__bars,
+	&__bars::after,
+	&__bars::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 4px;
+		border-radius: 2px;
+		background-color: $white;
+		transition: width 0.4s;
+	}
+
+	&__bars {
+		width: 100%;
+
+		&::after {
+			top: 16px;
+			width: 60%;
+		}
+
+		&::before {
+			top: 32px;
+			width: 30%;
+			transition-delay: 0.1s;
+		}
+	}
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	background-image: $color-gradient-solid;
+	transition: 0.5s cubic-bezier(0.74, 0.14, 0.35, 0.83);
+
+	&--show {
+		right: 0;
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	&__item {
+		position: relative;
+		padding: 2rem 2rem;
+		margin: 1rem 0;
+		color: $white;
+		font-size: 3rem;
+		text-decoration: none;
+
+		&--animation-nav {
+			animation: animationNav 1s both;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 2px;
+			height: 100%;
+			background-color: $white;
+			transform: scaleY(0);
+			transition: transform 0.3s;
+		}
+	}
+	&__item:hover::after {
+		transform: scaleY(1);
+	}
+}
+
+@keyframes animationNav {
+	0% {
+		transform: translateX(500%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+// HEADER
+
+.header {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 78vh;
+	padding: 2rem;
+	color: $white;
+	text-align: center;
+	@include heroImg('../img/palm-640.jpg');
+	background-attachment: scroll;
+	&__h1 {
+		font-family: var(--font-decoration);
+		font-size: 5.5rem;
+		font-weight: 300;
+		margin-bottom: 1.2rem;
+	}
+	&__btn {
+		margin-top: 30px;
+		padding: 0.8rem 1.6rem;
+		background-color: $white;
+		color: $dark;
+		border-radius: 20px;
+		text-decoration: none;
+		text-transform: uppercase;
+		cursor: pointer;
+		&::before {
+			background-color: $light-white;
+		}
+	}
+}
+
+// MAIN
+// countries
+
+.countries {
+	&__box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		margin: 5rem 0;
+		background-color: $light-white;
+	}
+	&__img {
+		width: 100%;
+	}
+	&__box-text {
+		padding: 2.2rem;
+		text-align: center;
+	}
+	&__h3 {
+		margin-bottom: 1rem;
+		font-family: var(--font-bold);
+		font-size: 1.8rem;
+	}
+}
+
+// IMG
+
+.img {
+	position: relative;
+	padding: 15rem 3rem;
+	@include heroImg('../img/maldives-640.jpg');
+	text-align: center;
+	color: $white;
+	&__h2 {
+		margin-bottom: 5rem;
+		font-family: var(--font-decoration);
+		font-size: 4rem;
+		font-weight: 300;
+	}
+	&_p {
+		margin: 2rem;
+	}
+}
+
+// countries
+
+.countries {
+	&__card {
+		position: relative;
+		height: 400px;
+		margin: 2rem 0;
+		color: $white;
+		text-align: center;
+		perspective: 500px;
+		&-img {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			padding: 2rem;
+			border-radius: 20px;
+			transition: transform 0.8s, opacity 0.8s;
+			background-size: cover;
+			&--one {
+				background-image: $color-gradient-transparent,
+					url('../img/houses-640.jpg');
+			}
+			&--two {
+				background-image: $color-gradient-transparent,
+					url('../img/rio-de-janeiro-640.jpg');
+			}
+			&--three {
+				background-image: $color-gradient-transparent,
+					url('../img/zakynthos-640.jpg');
+			}
+		}
+
+		&:hover {
+			.countries__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+			.countries__card-info {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+		}
+
+		&-img-btn {
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+			font-weight: bold;
+		}
+
+		&-info {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			padding: 2rem;
+			background-color: $text-bgc;
+			border-radius: 20px;
+			opacity: 0;
+			transform: rotateY(-180deg);
+			transition: transform 0.8s, opacity 0.8s;
+			&-btn {
+				margin-top: 1rem;
+				padding: 1.5rem 3rem;
+				background-color: $white;
+				border-radius: 20px;
+				border: none;
+				transition: background-color 0.3s;
+				cursor: pointer;
+				&::before {
+					background-color: $light-white;
+				}
+			}
+		}
+
+		&-h3 {
+			margin-bottom: 2rem;
+			font-family: var(--font-decoration);
+			font-weight: 300;
+			font-size: 3rem;
+		}
+		&-list {
+			list-style: none;
+		}
+		&-list-item {
+			padding: 1.6rem 0;
+			border-bottom: 1px solid $white;
+		}
+		&-list-item:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+// ---------------
+// MEDIA
+// ---------------
+
+@media (min-width: 576px) {
+	body {
+		font-size: 1.5rem;
+	}
+	.countries {
+		&__box {
+			flex-direction: row;
+			align-items: center;
+		}
+		&__box-img {
+			width: 50%;
+			&--right {
+				order: 1;
+			}
+		}
+		&__box-text {
+			display: flex;
+			flex-direction: column;
+			width: 50%;
+			padding: 2.2rem;
+		}
+
+		&__h3 {
+			font-size: 2rem;
+		}
+	}
+	.img {
+		padding: 16rem 8rem;
+		&__h2 {
+			font-size: 4.5rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	body {
+		font-size: 1.6rem;
+	}
+	.decoration {
+		width: 45%;
+	}
+	.header__h1 {
+		font-size: 6.5rem;
+	}
+	.header__btn {
+		padding: 1.2rem 2.4rem;
+	}
+	.header__text {
+		font-size: 2rem;
+	}
+
+	.nav__item {
+		font-size: 4rem;
+	}
+
+	.countries {
+		&__box-img {
+			width: 45%;
+		}
+		&__box-text {
+			width: 65%;
+		}
+
+		&__h3 {
+			font-size: 2.5rem;
+		}
+	}
+	.img {
+		padding: 18rem 10rem;
+		&__h2 {
+			font-size: 5.5rem;
+		}
+	}
+	.countries {
+		&__cards {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		&__card {
+			width: 45%;
+			margin: 1rem;
+		}
+	}
+}
+
+@media (min-width: 922px) {
+	body {
+		font-size: 1.8rem;
+	}
+	.nav-btn {
+		top: 30px;
+		right: 30px;
+	}
+	.nav__item {
+		font-size: 5rem;
+	}
+	.header__h1 {
+		font-size: 7.5rem;
+	}
+	.header {
+		background-image: $color-gradient-transparent, url('../img/palm-1920.jpg');
+	}
+	.img {
+		padding: 18rem 14rem;
+		@include heroImg('../img/maldives-1920.jpg');
+		&__h2 {
+			font-size: 5.5rem;
+		}
+	}
+	.countries {
+		&__card {
+			width: 30%;
+		}
+	}
+}

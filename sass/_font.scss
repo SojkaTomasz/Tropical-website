@@ -1,0 +1,33 @@
+:root {
+	--font-light: 'open_sans_ligHt', sans-serif;
+	--font-bold: 'open_sans_bold', sans-serif;
+	--font-decoration: 'dancing_script_regular', sans-serif;
+}
+
+
+@font-face {
+	font-family: 'open_sans_light';
+	src: url('../fonts/opensans-light-webfont.woff2') format('woff2'),
+		url('../fonts/opensans-light-webfont.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'open_sans_bold';
+	src: url('../fonts/opensans-bold-webfont.woff2') format('woff2'),
+		url('../fonts/opensans-bold-webfont.woff') format('woff');
+	font-weight: 700;
+	font-style: bold;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'dancing_script_regular';
+	src: url('../fonts/dancingscript-regular-webfont.woff2') format('woff2'),
+		url('../fonts/dancingscript-regular-webfont.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}

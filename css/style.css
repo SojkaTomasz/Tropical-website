@@ -1,0 +1,490 @@
+:root {
+  --font-light: "open_sans_ligHt", sans-serif;
+  --font-bold: "open_sans_bold", sans-serif;
+  --font-decoration: "dancing_script_regular", sans-serif;
+}
+
+@font-face {
+  font-family: "open_sans_light";
+  src: url("../fonts/opensans-light-webfont.woff2") format("woff2"), url("../fonts/opensans-light-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "open_sans_bold";
+  src: url("../fonts/opensans-bold-webfont.woff2") format("woff2"), url("../fonts/opensans-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+@font-face {
+  font-family: "dancing_script_regular";
+  src: url("../fonts/dancingscript-regular-webfont.woff2") format("woff2"), url("../fonts/dancingscript-regular-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.btn-animation {
+  position: relative;
+  transition: background-color 3s;
+  overflow: hidden;
+  z-index: 0;
+}
+.btn-animation::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  z-index: -1;
+}
+.btn-animation:hover::before {
+  transform: scaleX(1);
+}
+
+.decoration {
+  position: absolute;
+  height: 45px;
+  width: 60%;
+  background-color: #fff;
+}
+.decoration__left-bottom {
+  bottom: 0;
+  left: -30px;
+  transform: skewX(45deg);
+}
+.decoration__right-top {
+  top: 0;
+  right: -30px;
+  transform: skewX(45deg);
+}
+
+.section-h2 {
+  margin-bottom: 3.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  background: linear-gradient(to top left, #ff721b 0%, #7873f5 100%);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+}
+
+.section-padding {
+  padding: 6.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-h2 {
+    margin-bottom: 4rem;
+    font-size: 3rem;
+  }
+  .section-padding {
+    padding: 7rem 1.5rem;
+  }
+}
+@media (min-width: 922px) {
+  .section-h2 {
+    margin-bottom: 4.5rem;
+    font-size: 4rem;
+  }
+  .section-padding {
+    padding: 9rem 1.5rem;
+  }
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-light);
+  color: #555555;
+  font-size: 1.4rem;
+}
+
+.nav-btn {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  padding: 1rem;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 100;
+}
+.nav-btn:focus {
+  outline: none;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 8px;
+}
+.nav-btn:hover .nav-btn__bars::after, .nav-btn:hover .nav-btn__bars::before {
+  width: 100%;
+}
+.nav-btn__box {
+  position: relative;
+  width: 48px;
+  height: 36px;
+}
+.nav-btn__bars, .nav-btn__bars::after, .nav-btn__bars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: width 0.4s;
+}
+.nav-btn__bars {
+  width: 100%;
+}
+.nav-btn__bars::after {
+  top: 16px;
+  width: 60%;
+}
+.nav-btn__bars::before {
+  top: 32px;
+  width: 30%;
+  transition-delay: 0.1s;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-image: radial-gradient(circle at top right, #ff721b 0%, #7873f5 100%);
+  transition: 0.5s cubic-bezier(0.74, 0.14, 0.35, 0.83);
+}
+.nav--show {
+  right: 0;
+}
+.nav__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.nav__item {
+  position: relative;
+  padding: 2rem 2rem;
+  margin: 1rem 0;
+  color: #fff;
+  font-size: 3rem;
+  text-decoration: none;
+}
+.nav__item--animation-nav {
+  animation: animationNav 1s both;
+}
+.nav__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #fff;
+  transform: scaleY(0);
+  transition: transform 0.3s;
+}
+.nav__item:hover::after {
+  transform: scaleY(1);
+}
+
+@keyframes animationNav {
+  0% {
+    transform: translateX(500%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 78vh;
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+  background-image: linear-gradient(45deg, rgba(255, 114, 27, 0.4784313725), rgba(73, 67, 240, 0.7333333333)), url("../img/palm-640.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-attachment: scroll;
+}
+.header__h1 {
+  font-family: var(--font-decoration);
+  font-size: 5.5rem;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+.header__btn {
+  margin-top: 30px;
+  padding: 0.8rem 1.6rem;
+  background-color: #fff;
+  color: #555555;
+  border-radius: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.header__btn::before {
+  background-color: #f7f7f7;
+}
+
+.countries__box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0;
+  background-color: #f7f7f7;
+}
+.countries__img {
+  width: 100%;
+}
+.countries__box-text {
+  padding: 2.2rem;
+  text-align: center;
+}
+.countries__h3 {
+  margin-bottom: 1rem;
+  font-family: var(--font-bold);
+  font-size: 1.8rem;
+}
+
+.img {
+  position: relative;
+  padding: 15rem 3rem;
+  background-image: linear-gradient(45deg, rgba(255, 114, 27, 0.4784313725), rgba(73, 67, 240, 0.7333333333)), url("../img/maldives-640.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+}
+.img__h2 {
+  margin-bottom: 5rem;
+  font-family: var(--font-decoration);
+  font-size: 4rem;
+  font-weight: 300;
+}
+.img_p {
+  margin: 2rem;
+}
+
+.countries__card {
+  position: relative;
+  height: 400px;
+  margin: 2rem 0;
+  color: #fff;
+  text-align: center;
+  perspective: 500px;
+}
+.countries__card-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  border-radius: 20px;
+  transition: transform 0.8s, opacity 0.8s;
+  background-size: cover;
+}
+.countries__card-img--one {
+  background-image: linear-gradient(45deg, rgba(255, 114, 27, 0.4784313725), rgba(73, 67, 240, 0.7333333333)), url("../img/houses-640.jpg");
+}
+.countries__card-img--two {
+  background-image: linear-gradient(45deg, rgba(255, 114, 27, 0.4784313725), rgba(73, 67, 240, 0.7333333333)), url("../img/rio-de-janeiro-640.jpg");
+}
+.countries__card-img--three {
+  background-image: linear-gradient(45deg, rgba(255, 114, 27, 0.4784313725), rgba(73, 67, 240, 0.7333333333)), url("../img/zakynthos-640.jpg");
+}
+.countries__card:hover .countries__card-img {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+.countries__card:hover .countries__card-info {
+  transform: rotateY(0);
+  opacity: 1;
+}
+.countries__card-img-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-weight: bold;
+}
+.countries__card-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  background-color: #59afff;
+  border-radius: 20px;
+  opacity: 0;
+  transform: rotateY(-180deg);
+  transition: transform 0.8s, opacity 0.8s;
+}
+.countries__card-info-btn {
+  margin-top: 1rem;
+  padding: 1.5rem 3rem;
+  background-color: #fff;
+  border-radius: 20px;
+  border: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.countries__card-info-btn::before {
+  background-color: #f7f7f7;
+}
+.countries__card-h3 {
+  margin-bottom: 2rem;
+  font-family: var(--font-decoration);
+  font-weight: 300;
+  font-size: 3rem;
+}
+.countries__card-list {
+  list-style: none;
+}
+.countries__card-list-item {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid #fff;
+}
+.countries__card-list-item:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 576px) {
+  body {
+    font-size: 1.5rem;
+  }
+  .countries__box {
+    flex-direction: row;
+    align-items: center;
+  }
+  .countries__box-img {
+    width: 50%;
+  }
+  .countries__box-img--right {
+    order: 1;
+  }
+  .countries__box-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 2.2rem;
+  }
+  .countries__h3 {
+    font-size: 2rem;
+  }
+  .img {
+    padding: 16rem 8rem;
+  }
+  .img__h2 {
+    font-size: 4.5rem;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+  .decoration {
+    width: 45%;
+  }
+  .header__h1 {
+    font-size: 6.5rem;
+  }
+  .header__btn {
+    padding: 1.2rem 2.4rem;
+  }
+  .header__text {
+    font-size: 2rem;
+  }
+  .nav__item {
+    font-size: 4rem;
+  }
+  .countries__box-img {
+    width: 45%;
+  }
+  .countries__box-text {
+    width: 65%;
+  }
+  .countries__h3 {
+    font-size: 2.5rem;
+  }
+  .img {
+    padding: 18rem 10rem;
+  }
+  .img__h2 {
+    font-size: 5.5rem;
+  }
+  .countries__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .countries__card {
+    width: 45%;
+    margin: 1rem;
+  }
+}
+@media (min-width: 922px) {
+  body {
+    font-size: 1.8rem;
+  }
+  .nav-btn {
+    top: 30px;
+    right: 30px;
+  }
+  .nav__item {
+    font-size: 5rem;
+  }
+  .header__h1 {
+    font-size: 7.5rem;
+  }
+  .header {
+    background-image: linear-gradient(45deg, rgba(255, 114, 27, 0.4784313725), rgba(73, 67, 240, 0.7333333333)), url("../img/palm-1920.jpg");
+  }
+  .img {
+    padding: 18rem 14rem;
+    background-image: linear-gradient(45deg, rgba(255, 114, 27, 0.4784313725), rgba(73, 67, 240, 0.7333333333)), url("../img/maldives-1920.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .img__h2 {
+    font-size: 5.5rem;
+  }
+  .countries__card {
+    width: 30%;
+  }
+}/*# sourceMappingURL=style.css.map */

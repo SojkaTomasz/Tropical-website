@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script
+			src="https://kit.fontawesome.com/f5a70fd252.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<!-- NAV -->
+		<nav class="nav">
+			<button class="nav-btn">
+				<div class="nav-btn__box">
+					<div class="nav-btn__bars"></div>
+				</div>
+			</button>
+			<div class="nav__items">
+				<a href="#countries" onclick="deleteAnimation()" class="nav__item"
+					>Kraje</a
+				>
+				<a href="#offer" onclick="deleteAnimation()" class="nav__item"
+					>Oferty</a
+				>
+				<a href="#reviews" onclick="deleteAnimation()" class="nav__item"
+					>Opinie</a
+				>
+				<a href="#contact" onclick="deleteAnimation()" class="nav__item"
+					>Kontakt</a
+				>
+			</div>
+		</nav>
+		<!-- HEADER -->
+		<header class="header section">
+			<h1 class="header__h1">Travel Paradise</h1>
+
+			<p class="header__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, ullam.
+			</p>
+
+			<a href="#offer" class="header__btn btn-animation">poznaj ofertę</a>
+			<div class="decoration decoration__left-bottom"></div>
+		</header>
+		<!-- MAIN -->
+		<main class="main">
+			<!-- COUNTRIES -->
+			<section class="countries section-padding section white-section">
+				<div class="wrapper">
+					<h2 class="section-h2">Spełniaj Marzenia</h2>
+					<div class="countries__box">
+						<div class="countries__box-img">
+							<img
+								src="./img/beautiful-640.jpg"
+								alt=""
+								class="countries__img"
+							/>
+						</div>
+						<div class="countries__box-text">
+							<h3 class="countries__h3">Wymarzone wakacje</h3>
+							<p class="countries__p">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni
+								tempora omnis cumque fuga dolore asperiores ipsa excepturi,
+								blanditiis non commodi ipsum repellendus, sint recusandae?
+							</p>
+						</div>
+					</div>
+					<div class="countries__box">
+						<div class="countries__box-img countries__box-img--right">
+							<img
+								src="./img/hallstatt-640.jpg"
+								alt=""
+								class="countries__img"
+							/>
+						</div>
+						<div class="countries__box-text countries__box-text--right">
+							<h3 class="countries__h3">Niezapomniane przygody</h3>
+							<p class="countries__p">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni
+								tempora omnis cumque fuga dolore asperiores ipsa excepturi,
+								blanditiis non commodi ipsum repellendus, sint recusandae?
+							</p>
+						</div>
+					</div>
+					<div class="countries__box">
+						<div class="countries__box-img">
+							<img
+								src="./img/bora-bora-640.jpg"
+								alt=""
+								class="countries__img"
+							/>
+						</div>
+						<div class="countries__box-text">
+							<h3 class="countries__h3">Wspomnienia na zawsze</h3>
+							<p class="countries__p">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+								Magnitempora omnis cumque fuga dolore asperiores ipsa
+								excepturi,blanditiis non commodi ipsum repellendus, sint
+								recusandae?
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- IMG -->
+			<section class="img section">
+				<h2 class="img__h2">Podróże po Tropikalnym Raju</h2>
+				<hr />
+				<p class="img_p">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quam.
+				</p>
+				<hr />
+				<div class="decoration decoration__left-bottom"></div>
+				<div class="decoration decoration__right-top"></div>
+			</section>
+			<!-- countries -->
+			<section
+				class="countries section-padding section white-section"
+				id="countries"
+			>
+				<div class="wrapper">
+					<h2 class="section-h2">Odwiedz kraje</h2>
+					<div class="countries__cards">
+						<div class="countries__card" onclick="void(0)">
+							<div class="countries__card-img countries__card-img--one">
+								<h3 class="countries__card-h3">Włochy</h3>
+								<p class="countries__card-img-btn">
+									<i class="fa-solid fa-caret-right"></i> Więcej informacji
+								</p>
+							</div>
+							<div class="countries__card-info">
+								<h3 class="countries__card-h3">Włochy</h3>
+								<ul class="countries__card-list">
+									<li class="countries__card-list-item">Piękna okolica</li>
+									<li class="countries__card-list-item">Wspaniałe widoki</li>
+									<li class="countries__card-list-item">Krystaliczne woda</li>
+									<li class="countries__card-list-item">Piękne plaże</li>
+									<li class="countries__card-list-item">Smakowanie kuchni</li>
+								</ul>
+								<button class="countries__card-info-btn btn-animation">
+									Wybierz
+								</button>
+							</div>
+						</div>
+						<div class="countries__card" onclick="void(0)">
+							<div class="countries__card-img countries__card-img--two">
+								<h3 class="countries__card-h3">Rio De Janeiro</h3>
+								<p class="countries__card-img-btn">
+									<i class="fa-solid fa-caret-right"></i> Więcej informacji
+								</p>
+							</div>
+							<div class="countries__card-info">
+								<h3 class="countries__card-h3">Rio De Janeiro</h3>
+								<ul class="countries__card-list">
+									<li class="countries__card-list-item">Piękna okolica</li>
+									<li class="countries__card-list-item">Wspaniałe widoki</li>
+									<li class="countries__card-list-item">Krystaliczne woda</li>
+									<li class="countries__card-list-item">Piękne plaże</li>
+									<li class="countries__card-list-item">Smakowanie kuchni</li>
+								</ul>
+								<button class="countries__card-info-btn btn-animation">
+									Wybierz
+								</button>
+							</div>
+						</div>
+						<div class="countries__card" onclick="void(0)">
+							<div class="countries__card-img countries__card-img--three">
+								<h3 class="countries__card-h3">Zakynthos</h3>
+								<p class="countries__card-img-btn">
+									<i class="fa-solid fa-caret-right"></i> Więcej informacji
+								</p>
+							</div>
+							<div class="countries__card-info">
+								<h3 class="countries__card-h3">Zakynthos</h3>
+								<ul class="countries__card-list">
+									<li class="countries__card-list-item">Piękna okolica</li>
+									<li class="countries__card-list-item">Wspaniałe widoki</li>
+									<li class="countries__card-list-item">Krystaliczne woda</li>
+									<li class="countries__card-list-item">Piękne plaże</li>
+									<li class="countries__card-list-item">Smakowanie kuchni</li>
+								</ul>
+								<button class="countries__card-info-btn btn-animation">
+									Wybierz
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script src="./js/script.js"></script>
+	</body>
+</html>

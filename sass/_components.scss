@@ -1,0 +1,89 @@
+@use './colors' as *;
+@use './font';
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.btn-animation {
+	position: relative;
+	transition: background-color 3s;
+	overflow: hidden;
+	z-index: 0;
+	&::before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		transform: scaleX(0);
+		transition: transform 0.3s;
+		z-index: -1;
+	}
+	&:hover::before {
+		transform: scaleX(1);
+	}
+}
+
+.decoration {
+	position: absolute;
+	height: 45px;
+	width: 60%;
+	background-color: $white;
+	&__left-bottom {
+		bottom: 0;
+		left: -30px;
+		transform: skewX(45deg);
+	}
+	&__right-top {
+		top: 0;
+		right: -30px;
+		transform: skewX(45deg);
+	}
+}
+
+.section-h2 {
+	margin-bottom: 3.5rem;
+	text-align: center;
+	text-transform: uppercase;
+	background: $title-color-gradient;
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 3rem;
+}
+
+.section-padding {
+	padding: 6.5rem 1.5rem;
+}
+
+// ---------------
+// MEDIA
+// ---
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+	.section-h2 {
+		margin-bottom: 4rem;
+		font-size: 3rem;
+	}
+	.section-padding {
+		padding: 7rem 1.5rem;
+	}
+}
+
+@media (min-width: 922px) {
+	.section-h2 {
+		margin-bottom: 4.5rem;
+		font-size: 4rem;
+	}
+	.section-padding {
+		padding: 9rem 1.5rem;
+	}
+}

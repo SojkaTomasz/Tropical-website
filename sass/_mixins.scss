@@ -1,0 +1,9 @@
+@use './colors' as *;
+@use './font';
+
+@mixin heroImg($imgBg) {
+	background-image: $color-gradient-transparent, url($imgBg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
