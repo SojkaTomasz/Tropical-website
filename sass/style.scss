@@ -13,7 +13,6 @@
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
-	overflow-x: hidden;
 }
 
 body {
@@ -215,6 +214,7 @@ body {
 	padding: 15rem 3rem;
 	@include heroImg('../img/maldives-640.jpg');
 	text-align: center;
+	overflow: hidden;
 	color: $white;
 	&__h2 {
 		margin-bottom: 5rem;
@@ -335,6 +335,7 @@ body {
 .offer {
 	position: relative;
 	background-image: $title-color-gradient;
+	overflow: hidden;
 	.section-h2 {
 		-webkit-text-fill-color: $white;
 	}
@@ -413,6 +414,7 @@ body {
 .contact {
 	position: relative;
 	background-color: $dark-white;
+	overflow: hidden;
 	.decoration__left-bottom {
 		background-color: $dark;
 	}

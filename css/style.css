@@ -110,7 +110,6 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -291,6 +290,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   text-align: center;
+  overflow: hidden;
   color: #fff;
 }
 .img__h2 {
@@ -396,6 +396,7 @@ body {
 .offer {
   position: relative;
   background-image: linear-gradient(to top left, #ff721b 0%, #7873f5 100%);
+  overflow: hidden;
 }
 .offer .section-h2 {
   -webkit-text-fill-color: #fff;
@@ -470,6 +471,7 @@ body {
 .contact {
   position: relative;
   background-color: #e8e8e8;
+  overflow: hidden;
 }
 .contact .decoration__left-bottom {
   background-color: #3c3c3c;
