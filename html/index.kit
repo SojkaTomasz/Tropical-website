@@ -4,58 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="author" content="Sojka Tomasz" />
-		<meta
-			name="keywords"
-			content="
-		Wycieczki, podróże, biuro podróży, odkrywanie, eksploracja, wakacje, destynacje, atrakcje turystyczne, rejsy, przewodnicy turystyczni, pakiety turystyczne, wyprawy przygodowe, kultura i sztuka, historia, plaże i relaks, góry i trekking, safari, podwodny świat, gastronomia, luksusowe podróże."
-		/>
-		<meta
-			name="description"
-			content="Biuro turystyczne oferujące wycieczki i podróże, zapewniające niezapomniane doświadczenia odkrywania nowych miejsc, eksploracji różnorodnych destynacji oraz relaksu na wymarzonych wakacjach. Nasi przewodnicy turystyczni pomogą Ci odkryć atrakcje turystyczne, a nasze pakiety turystyczne zapewnią wyjątkowe wyprawy przygodowe"
-		/>
+		<!-- @include 'head.kit' -->
 		<title>Biuro turystyczne Tropical Paradise</title>
-		<script
-			src="https://kit.fontawesome.com/f5a70fd252.js"
-			crossorigin="anonymous"
-		></script>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-		/>
-		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 	<body>
-		<nav class="nav">
-			<button class="nav-btn">
-				<div class="nav-btn__box">
-					<div class="nav-btn__bars"></div>
-				</div>
-			</button>
-			<div class="nav__items">
-				<a href="#countries" onclick="deleteAnimation()" class="nav__item"
-					>Kraje</a
-				>
-				<a href="#offer" onclick="deleteAnimation()" class="nav__item"
-					>Oferty</a
-				>
-				<a href="#reviews" onclick="deleteAnimation()" class="nav__item"
-					>Opinie</a
-				>
-				<a href="#contact" onclick="deleteAnimation()" class="nav__item"
-					>Kontakt</a
-				>
-			</div>
-		</nav>
+		<!-- @include 'nav.kit' -->
 		<header class="header section">
 			<h1 class="header__h1">Tropical Paradise</h1>
-
+		
 			<p class="header__text">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, ullam.
 			</p>
-
-			<a href="#offer" class="header__btn btn-animation">poznaj ofertę</a>
+		
+			<a href="/offer.html" class="header__btn btn-animation">poznaj ofertę</a>
 			<div class="decoration decoration__left-bottom"></div>
 		</header>
 		<main class="main">
@@ -151,7 +112,7 @@
 									href="#italy"
 									class="countries__card-info-btn btn-animation"
 								>
-									<a href="#italy">Czytaj więcej</a>
+									<a href="./offer.html#italy">Czytaj więcej</a>
 								</button>
 							</div>
 						</div>
@@ -175,7 +136,7 @@
 									href="#janeiro"
 									class="countries__card-info-btn btn-animation"
 								>
-									<a href="#janeiro">Czytaj więcej</a>
+									<a href="./offer.html#janeiro">Czytaj więcej</a>
 								</button>
 							</div>
 						</div>
@@ -196,79 +157,8 @@
 									<li class="countries__card-list-item">Smakowanie kuchni</li>
 								</ul>
 								<button class="countries__card-info-btn btn-animation">
-									<a href="#zakynthos">Czytaj więcej</a>
+									<a href="./offer.html#zakynthos">Czytaj więcej</a>
 								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="offer section-padding section" id="offer">
-				<div class="decoration decoration__left-bottom"></div>
-				<div class="decoration decoration__right-top"></div>
-				<div class="wrapper">
-					<div class="offer__box">
-						<h2 class="section-h2">Oferta</h2>
-
-						<div id="italy" class="offer__option">
-							<img
-								src="./img/houses-640.jpg"
-								alt=""
-								class="offer__option-img"
-							/>
-							<div class="offer__option-info">
-								<h3 class="offer__option-h3">Włochy</h3>
-								<p class="offer__option-text">
-									Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id,
-									ducimus illo reprehenderit repellat ullam ex reiciendis
-									dolorem dolorum fugit esse.
-									<br />
-									<br />
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Similique, eligendi.
-								</p>
-								<button class="offer__option-btn btn-animation">Wybierz</button>
-							</div>
-						</div>
-
-						<div id="janeiro" class="offer__option">
-							<img
-								src="./img/rio-de-janeiro-640.jpg"
-								alt=""
-								class="offer__option-img offer__option-img--right"
-							/>
-							<div class="offer__option-info offer__option-info--right">
-								<h3 class="offer__option-h3">Rio De Janeiro</h3>
-								<p class="offer__option-text">
-									Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id,
-									ducimus illo reprehenderit repellat ullam ex reiciendis
-									dolorem dolorum fugit esse.
-									<br />
-									<br />
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Similique, eligendi.
-								</p>
-								<button class="offer__option-btn btn-animation">Wybierz</button>
-							</div>
-						</div>
-						<div id="zakynthos" class="offer__option">
-							<img
-								src="./img/zakynthos-640.jpg"
-								alt=""
-								class="offer__option-img"
-							/>
-							<div class="offer__option-info">
-								<h3 class="offer__option-h3">Zakynthos</h3>
-								<p class="offer__option-text">
-									Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id,
-									ducimus illo reprehenderit repellat ullam ex reiciendis
-									dolorem dolorum fugit esse.
-									<br />
-									<br />
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Similique, eligendi.
-								</p>
-								<button class="offer__option-btn btn-animation">Wybierz</button>
 							</div>
 						</div>
 					</div>
@@ -359,95 +249,8 @@
 					</div>
 				</div>
 			</section>
-			<section
-				id="contact"
-				class="contact section-padding section white-section"
-			>
-				<div class="decoration decoration__left-bottom"></div>
-				<div class="decoration decoration__right-top"></div>
-				<div class="wrapper">
-					<h2 class="section-h2">Kontakt</h2>
-					<form class="contact__form">
-						<lebel for="name" class="contact__form-lebel"
-							>Imię i Nazwisko:</lebel
-						>
-						<input type="text" class="contact__form-input" id="name" />
-						<lebel for="email" class="contact__form-lebel">Adres e-mail:</lebel>
-						<input type="text" class="contact__form-input" id="email" />
-						<lebel for="message" class="contact__form-lebel">Wiadomość:</lebel>
-						<textarea
-							name=""
-							id="message"
-							class="contact__form-textarea"
-						></textarea>
-						<button type="submit" class="contact__form-btn btn-animation">
-							Wyślij
-						</button>
-					</form>
-				</div>
-			</section>
 		</main>
-		<footer class="footer section white-section">
-			<div class="wrapper">
-				<div class="footer__box">
-					<div class="footer__box-company">
-						<h3 class="footer__box-h3 footer__box-h3--logo">
-							Tropical Paradise
-						</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius,
-							fugit quia? Provident, placeat ducimus obcaecati quas, cum
-							voluptate dolor quisquam nihil laudantium maiores expedita minus
-							autem sapiente impedit quasi optio.
-						</p>
-						<a href="#"><i class="fa-brands fa-linkedin"></i></a>
-						<a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-						<a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-					</div>
-					<div class="footer__box-offer">
-						<h3 class="footer__box-h3">Oferta</h3>
-						<ul class="footer__box-list">
-							<li class="footer__box-list-items">
-								<a href="#italy">Włochy</a>
-							</li>
-							<li class="footer__box-list-items">
-								<a href="#janeiro">Rio De Janeiro</a>
-							</li>
-							<li class="footer__box-list-items">
-								<a href="#zakynthos">Zakynthos</a>
-							</li>
-							<li class="footer__box-list-items"><a href="#">Pozostałe</a></li>
-						</ul>
-					</div>
-					<div class="footer__box-about-us">
-						<h3 class="footer__box-h3">Firma</h3>
-						<ul class="footer__box-list">
-							<li class="footer__box-list-items"><a href="#">O nasy</a></li>
-							<li class="footer__box-list-items"><a href="#">Zarząd</a></li>
-							<li class="footer__box-list-items"><a href="#">Zespół</a></li>
-							<li class="footer__box-list-items"><a href="#">Kariera</a></li>
-						</ul>
-					</div>
-				</div>
-				<hr />
-				<p class="footer__bottom-text">
-					&copy; <span class="footer__year"></span>Tropical Paradise
-				</p>
-			</div>
-		</footer>
-		<script
-			type="text/javascript"
-			src="//code.jquery.com/jquery-1.11.0.min.js"
-		></script>
-		<script
-			type="text/javascript"
-			src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
-		></script>
-		<script
-			type="text/javascript"
-			src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-		></script>
-		<script src="./js/slick.js"></script>
-		<script src="./js/script.js"></script>
+		<!-- @include 'footer.kit' -->
+		<!-- @include 'script.kit' -->
 	</body>
 </html>

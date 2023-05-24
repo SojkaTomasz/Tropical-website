@@ -8,9 +8,10 @@
 	background-attachment: fixed;
 }
 
-@mixin contact{
+@mixin contact {
+	background-color: $light-white;
 	width: 100%;
 	padding: 0.5rem;
-	border: none;
+	border: 1px solid $dark-white;
 	border-radius: 0.5rem;
 }

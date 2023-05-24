@@ -161,6 +161,9 @@ body {
 	text-align: center;
 	@include heroImg('../img/palm-640.jpg');
 	background-attachment: scroll;
+	&-pages{
+		height: 40vh;
+	}
 	&__h1 {
 		font-family: var(--font-decoration);
 		font-size: 5.5rem;
@@ -334,7 +337,6 @@ body {
 
 .offer {
 	position: relative;
-	background-image: $title-color-gradient;
 	overflow: hidden;
 	.section-h2 {
 		-webkit-text-fill-color: $white;
@@ -413,11 +415,7 @@ body {
 // contact
 .contact {
 	position: relative;
-	background-color: $dark-white;
 	overflow: hidden;
-	.decoration__left-bottom {
-		background-color: $dark;
-	}
 	&__form {
 		&-lebel {
 			display: block;
@@ -451,9 +449,11 @@ body {
 }
 
 .footer {
+	position: relative;
 	color: $white;
 	background-color: $dark;
-	padding: 6.5rem 1.5rem 2rem;
+	overflow: hidden;
+	padding: 10rem 1.5rem 2rem;
 	p {
 		line-height: 2rem;
 	}
