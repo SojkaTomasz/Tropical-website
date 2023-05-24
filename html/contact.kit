@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- @include 'head.kit' -->
+		<title>Biuro turystyczne Tropical Paradise</title>
+	</head>
+	<body>
+		<!-- @include 'nav.kit' -->
+		<header class="header header-pages section">
+            <h1 class="header__h1">Kontakt</h1>
+            <div class="decoration decoration__left-bottom"></div>
+        </header>
+		<main class="main">
+			<section
+				id="contact"
+				class="contact section-padding section white-section"
+			>
+				<div class="wrapper">
+					<form class="contact__form">
+						<lebel for="name" class="contact__form-lebel"
+							>Imię i Nazwisko:</lebel
+						>
+						<input type="text" class="contact__form-input" id="name" />
+						<lebel for="email" class="contact__form-lebel">Adres e-mail:</lebel>
+						<input type="text" class="contact__form-input" id="email" />
+						<lebel for="message" class="contact__form-lebel">Wiadomość:</lebel>
+						<textarea
+							name=""
+							id="message"
+							class="contact__form-textarea"
+						></textarea>
+						<button type="submit" class="contact__form-btn btn-animation">
+							Wyślij
+						</button>
+					</form>
+				</div>
+			</section>
+		</main>
+		<!-- @include 'footer.kit' -->
+		<!-- @include 'script.kit' -->
+	</body>
+</html>
