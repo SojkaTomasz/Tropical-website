@@ -161,7 +161,7 @@ body {
 	text-align: center;
 	@include heroImg('../img/palm-640.jpg');
 	background-attachment: scroll;
-	&-pages{
+	&-pages {
 		height: 40vh;
 	}
 	&__h1 {
@@ -302,15 +302,13 @@ body {
 				background-color: $white;
 				border-radius: 20px;
 				border: 1px solid $dark-white;
+				text-transform: uppercase;
+				color: $dark;
+				text-decoration: none;
 				transition: background-color 0.3s;
 				cursor: pointer;
 				&::before {
 					background-color: $dark-white;
-				}
-				a {
-					text-transform: uppercase;
-					color: $dark;
-					text-decoration: none;
 				}
 			}
 		}
